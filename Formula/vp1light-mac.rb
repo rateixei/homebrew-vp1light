@@ -12,7 +12,7 @@ class Vp1lightMac < Formula
   depends_on "jfb3615/repo/heputils"
   depends_on "jfb3615/repo/mcutils"
   depends_on "jfb3615/repo/heppdt"
-  depends_on "boost@1.60"
+  depends_on "boost@1.58"
   depends_on "clhep"
   depends_on "eigen"
   def install
