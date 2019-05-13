@@ -6,7 +6,7 @@ class SoqtBb < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => "build"
   depends_on "qt5"
-  depends_on "jfb3615/repo/coin-bb" => :build
+  depends_on "ric-bianchi/repo/coin-bb" => :build
   def install
     mkdir "builddir" do
       system "cmake", "..", "-DCMAKE_CXX_FLAGS=-std=c++14", *std_cmake_args
