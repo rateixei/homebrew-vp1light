@@ -9,7 +9,9 @@ class Vp1lightMac < Formula
   # sha256 "82a8fe9250e6cfe8a129fe53740a3c87c09d73358f8a98169e8cb4d1144554d2"
   # url "https://atlas-vp1.web.cern.ch/atlas-vp1/sources/vp1light-2.1.zip"
   # url "http://localhost:8000/vp1light-2.1-N.tar.gz"
-  head "git://127.0.0.1/", :using => :git # dev, live git branch
+
+  # head "git://127.0.0.1/", :using => :git # dev, live git branch
+  head "git://127.0.0.1/", :using => :git, :branch => "master-new-vp1light-athena-master" # dev, live git branch
 
   depends_on "cmake" => :build
   depends_on "boost"

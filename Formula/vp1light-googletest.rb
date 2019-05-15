@@ -1,5 +1,5 @@
 # This formula created by Joe Boudreau <boudreau@pitt.edu> for the purpose
-# of automating the build of the vp1light application. 
+# of automating the build of the vp1light application.
 class Vp1lightGoogletest < Formula
   desc "Googletest exclusively for the automated build of vp1light."
   homepage "https://github.com/google/googletest"
@@ -9,12 +9,13 @@ class Vp1lightGoogletest < Formula
 
   def install
     system "cmake", "CMakeLists.txt", *std_cmake_args
-    system "make", "install" 
+    system "make", "install"
   end
-  bottle do
-    root_url "https://qat.pitt.edu/Bottles"
-    cellar :any_skip_relocation
-    sha256 "3d414b2ea3fd25c6c2f16746d39906251a99bd0fc8e93d481feda90dfe766799" => :mojave
-  end
+  
+  # bottle do
+  #   root_url "https://qat.pitt.edu/Bottles"
+  #   cellar :any_skip_relocation
+  #   sha256 "3d414b2ea3fd25c6c2f16746d39906251a99bd0fc8e93d481feda90dfe766799" => :mojave
+  # end
 
 end
