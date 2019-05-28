@@ -11,7 +11,7 @@ class Vp1lightMac < Formula
   # url "http://localhost:8000/vp1light-2.1-N.tar.gz"
 
   head "git://127.0.0.1/", :using => :git # dev, live git branch
-  # head "git://127.0.0.1/", :using => :git, :branch => "master-new-vp1light-athena-master" # dev, live git branch
+  # head "git://127.0.0.1/", :using => :git, :branch => "ric/master-new-vp1light-athena" # dev, live git branch
 
   depends_on "cmake" => :build
   depends_on "boost"

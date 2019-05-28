@@ -9,7 +9,7 @@ class SoqtBb < Formula
   depends_on "ric-bianchi/repo/coin-bb" => :build
   def install
     mkdir "builddir" do
-      system "cmake", "..", "-DCMAKE_CXX_FLAGS=-std=c++14", *std_cmake_args
+      system "cmake", "..", "-DCMAKE_CXX_FLAGS=-std=c++14", "-DCoin_DIR=/usr/local/Cellar/coin-bb/1.0/lib/cmake/Coin-4.0.0", *std_cmake_args
       system "make"
       system "sed -i \"\" s/QtCore/Qt5Core/g src/SoQt.pc"
       system "sed -i \"\" s/QtGui/Qt5PrintSupport/g src/SoQt.pc"
