@@ -19,17 +19,15 @@ class Vp1lightMac < Formula
   depends_on "eigen"
 
   # depends_on "https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel/raw/master/geomodelkernel.rb"
-  # depends_on "atlas/geomodel/geomodelcore"
-  depends_on "ric-bianchi/repo/geomodelcore"
-
-  depends_on "ric-bianchi/repo/vp1light-root"
-  depends_on "ric-bianchi/repo/coin-bb"
-  depends_on "ric-bianchi/repo/simage-bb"
-  depends_on "ric-bianchi/repo/soqt-bb"
-  depends_on "ric-bianchi/repo/vp1light-googletest"
-  depends_on "ric-bianchi/repo/heputils"
-  depends_on "ric-bianchi/repo/mcutils"
-  depends_on "ric-bianchi/repo/heppdt"
+  depends_on "atlas/geomodel/geomodelcore"
+  depends_on "ric-bianchi/coin3d/coin"
+  depends_on "ric-bianchi/coin3d/simage"
+  depends_on "ric-bianchi/coin3d/soqt5"
+  depends_on "ric-bianchi/vp1light/vp1light-root"
+  depends_on "ric-bianchi/vp1light/vp1light-googletest"
+  depends_on "ric-bianchi/vp1light/heputils"
+  depends_on "ric-bianchi/vp1light/mcutils"
+  depends_on "ric-bianchi/vp1light/heppdt"
 
   def install
        ENV.deparallelize
