@@ -1,7 +1,7 @@
 class Vp1lightMac < Formula
 
-  desc ""
-  homepage "http://atlas-vp1.web.cern.ch/atlas-vp1/home/"
+ desc "The VP1light HEP event data and geometry display"
+ homepage "http://atlas-vp1.web.cern.ch/atlas-vp1/home/"
 
   # Joe's original sources
   # url "qat.pitt.edu/other-src/vp1light-2.0.tar.gz"
@@ -14,7 +14,7 @@ class Vp1lightMac < Formula
   # sha256 "5bd1d8d16053f5b691dd47057cd3b93ed2a5fad64a46ec442dc9b39d0fb51d0a"
 
   head "git://127.0.0.1/", :using => :git # dev, live git branch
-  
+
   depends_on "cmake" => :build
   depends_on "atlas/geomodel/geomodelcore"
   depends_on "ric-bianchi/coin3d/simage"
