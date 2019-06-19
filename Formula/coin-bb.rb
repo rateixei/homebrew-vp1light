@@ -5,10 +5,22 @@ class CoinBb < Formula
   sha256 "e153260c99101beebc0acf33536f31501dfaf1e065bf3b0d8f69a7cc4a5d4747"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+
+
+  option "with-debug", "Build with debug symbols ('DCMAKE_BUILD_TYPE=Debug')"
+
+
   def install
+
+    extra_args = %W[]
+
+    if build.with? "debug"
+        extra_args << "-DCMAKE_BUILD_TYPE=Debug"
+    end
+
     mkdir "builddir" do
-      system "cmake", "..", "-DCMAKE_CXX_FLAGS=-std=c++14", *std_cmake_args
-      system "make",      "install" 
+      system "cmake", "..", "-DCMAKE_CXX_FLAGS=-std=c++14", *extra_args, *std_cmake_args
+      system "make",      "install"
     end
   end
 
