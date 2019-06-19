@@ -1,8 +1,4 @@
-# homebrew-coin3d
+# homebrew-vp1light
 
-The repository hosts Homebrew formulas to install some of the packages of the Coin3D suite. In particular:
-
-- simage -- a library to handle graphics files)
-- Coin -- the 3D graphics engine)
-- SoQt -- a glue library between Coin and the windowing system Qt5)
+The repository hosts Homebrew formulas to install the HEP 3D visualization tool "VP1Light" and its dependencies.
 
