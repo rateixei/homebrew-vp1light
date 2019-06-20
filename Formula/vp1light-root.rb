@@ -2,25 +2,26 @@ class Vp1lightRoot < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
 
-  # url "https://root.cern.ch/download/root_v6.14.06.source.tar.gz"
+  head "https://github.com/root-project/root.git"
+
+  # url "https://root.cern.ch/download/root_v6.14.06.source.tar.gz" # old VP1Light bundle
   # version "6.14.06"
   # sha256 "0fb943b61396f282b289e35c455a9ab60126229be1bd3f04a8f00b37c13ab432"
+  # bottle do
+  #   root_url "https://qat.pitt.edu/Bottles"
+  #   rebuild 1
+  #   sha256 "0ed9ac289f849d81fb08c4687ea89436ab3d7ac1e5989a8b78cad460df036ef1" => :mojave
+  #   sha256 "7591e6a94a7bd006fc27baee8bc45857a9298a480633da45d4239902b8edfec0" => :high_sierra
+  # end
 
   url "https://root.cern.ch/download/root_v6.16.00.source.tar.gz" # in sync with ATLASExternals
   version "6.16.00"
   sha256 "2a45055c6091adaa72b977c512f84da8ef92723c30837c7e2643eecc9c5ce4d8"
-
-
-  head "https://github.com/root-project/root.git"
-
-
   bottle do
-    root_url "https://qat.pitt.edu/Bottles"
-    rebuild 1
-    sha256 "0ed9ac289f849d81fb08c4687ea89436ab3d7ac1e5989a8b78cad460df036ef1" => :mojave
-    sha256 "7591e6a94a7bd006fc27baee8bc45857a9298a480633da45d4239902b8edfec0" => :high_sierra
+      # root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
+      root_url "https://atlas-vp1-for-outreach.web.cern.ch/atlas-vp1-for-outreach/sources/bottles"
+      sha256 "a59eace6f01f84da6b5261d18d4106a0b2c103bacc2f33be9b380d86233ee1ad" => :mojave
   end
-
 
   # https://github.com/Homebrew/homebrew-core/issues/30726
   # strings libCling.so | grep Xcode:

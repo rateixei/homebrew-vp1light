@@ -10,7 +10,13 @@ class Vp1lightMac < Formula
   # url "https://atlas-vp1.web.cern.ch/atlas-vp1/sources/vp1light-2.1.zip"
   # url "http://localhost:8000/vp1light-2.1-N.tar.gz"
 
-  head "git://127.0.0.1/", :using => :git # dev, live git branch
+  url "https://atlas-vp1.web.cern.ch/atlas-vp1/sources/vp1light-2.1-N.zip"
+  sha256 "4d48027bcaad0e8c760304d15125ee954c9138a92d24dbdc5f7b0be6f741be49"
+
+
+
+
+  # head "git://127.0.0.1/", :using => :git # dev, live git branch
   # head "git://127.0.0.1/", :using => :git, :branch => "ric/master-new-vp1light-athena" # dev, live git branch
 
   depends_on "cmake" => :build
@@ -20,9 +26,12 @@ class Vp1lightMac < Formula
 
   # depends_on "https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel/raw/master/geomodelkernel.rb"
   depends_on "atlas/geomodel/geomodelcore"
+  # depends_on "atlas/geomodel/geomodelkernel"
+
   depends_on "ric-bianchi/coin3d/coin"
   depends_on "ric-bianchi/coin3d/simage"
   depends_on "ric-bianchi/coin3d/soqt5"
+
   depends_on "ric-bianchi/vp1light/vp1light-root"
   depends_on "ric-bianchi/vp1light/vp1light-googletest"
   depends_on "ric-bianchi/vp1light/heputils"
