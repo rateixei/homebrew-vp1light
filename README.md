@@ -14,7 +14,21 @@ brew tap atlas/geomodel https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-ge
 brew tap ric-bianchi/vp1light 
 ```
 
-The commands above download all the recipes needed to install VP1Light and all its dependencies. The Tap `ric-bianchi/coin3d` will be automatically installed too, from which the 3D graphics libraries will be downloaded.
+The commands above download all the recipes needed to install VP1Light and all its dependencies. 
+
+You can verify the configuration of the custom Taps by issueing the command `brew tap`:
+
+```
+$ brew tap
+atlas/geomodel
+homebrew/cask
+homebrew/core
+ric-bianchi/vp1light
+```
+
+You should see the `atlas/geomodel` and the `ric-bianchi/vp1light` Taps installed besides the core Homebrew Taps, as above.
+
+The Tap `ric-bianchi/coin3d` will be automatically installed too, during the installation of the `vp1light-mac` package (see below), from which the 3D graphics libraries will be downloaded.
 
 ### 2. Install VP1Light
 
