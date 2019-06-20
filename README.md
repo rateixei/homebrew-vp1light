@@ -28,6 +28,7 @@ Now, you can launch VP1Light:
 vp1light
 ```
 
+![VP1Light screenshot on macOS Mojave](docs/vp1light-screenshot.png)
 
 ----
 
