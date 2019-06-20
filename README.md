@@ -16,6 +16,9 @@ brew tap ric-bianchi/vp1light
 
 The commands above download all the recipes needed to install VP1Light and all its dependencies. 
 
+
+#### More Details
+
 You can verify the configuration of the custom Taps by issueing the command `brew tap`:
 
 ```
