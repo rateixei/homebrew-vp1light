@@ -14,6 +14,8 @@ brew tap ric-bianchi/vp1light
 brew install vp1light-mac
 ```
 
+_Note:_ If you are using macOS Mojave, vp1light and its dependencies will be quickly installed from pre-compiled binaries in about one minute. If you are using an older macOS version, some of the packages will be compiled from source, which will take longer.
+
 Then, download a sample geometry datafile:
 
 ```
