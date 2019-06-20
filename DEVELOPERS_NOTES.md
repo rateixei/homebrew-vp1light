@@ -39,7 +39,7 @@ Above, you can see the custom Taps used for VP1light besides the Homebrew's Taps
 You can remove the VP1light-related taps by typing:
 
 ```
-...
+brew untap atlas/geomodel ric-bianchi/coin3d ric-bianchi/vp1light
 ```
 
 ### Cleaning
@@ -47,5 +47,5 @@ You can remove the VP1light-related taps by typing:
 You can remove all vp1light-related packages installed with `brew` by typing:
 
 ```
-brew remove coin soqt5 heppdt heputils mcutils vp1light-googletest vp1light-root vp1light-mac
+brew remove coin soqt5 heppdt heputils mcutils geomodelcore vp1light-googletest vp1light-root vp1light-mac
 ```
