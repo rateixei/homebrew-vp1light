@@ -5,9 +5,11 @@ class Vp1lightGoogletest < Formula
   desc "Googletest exclusively for the automated build of vp1light."
   homepage "https://github.com/google/googletest"
 
+  # SOURCES
   url "https://codeload.github.com/google/googletest/tar.gz/release-1.8.1"
   sha256 "9bf1fe5182a604b4135edc1a425ae356c9ad15e9b23f9f12a02e80184c3a249c"
 
+  # DEPENDENCIES
   depends_on "cmake" => :build
 
   def install
@@ -15,6 +17,7 @@ class Vp1lightGoogletest < Formula
     system "make", "install"
   end
 
+  # PRE-COMPILED PACKAGES ("Bottles")
   bottle do
     root_url "https://qat.pitt.edu/Bottles"
     cellar :any_skip_relocation

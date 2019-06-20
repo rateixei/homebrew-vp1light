@@ -3,18 +3,21 @@ class Vp1lightRoot < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
 
-  url "https://root.cern.ch/download/root_v6.14.06.source.tar.gz"
-  version "6.14.06"
-  sha256 "0fb943b61396f282b289e35c455a9ab60126229be1bd3f04a8f00b37c13ab432"
+  # SOURCES
+  url "https://root.cern.ch/download/root_v6.16.00.source.tar.gz" # ROOT version in sync with ATLASExternals
+  version "6.16.00"
+  sha256 "2a45055c6091adaa72b977c512f84da8ef92723c30837c7e2643eecc9c5ce4d8"
+
   head "https://github.com/root-project/root.git"
 
 
+  # PRE-COMPILED PACKAGES ("Bottles")
   bottle do
-    root_url "https://qat.pitt.edu/Bottles"
-    rebuild 1
-    sha256 "0ed9ac289f849d81fb08c4687ea89436ab3d7ac1e5989a8b78cad460df036ef1" => :mojave
-    sha256 "7591e6a94a7bd006fc27baee8bc45857a9298a480633da45d4239902b8edfec0" => :high_sierra
+      # root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
+      root_url "https://atlas-vp1-for-outreach.web.cern.ch/atlas-vp1-for-outreach/sources/bottles"
+      sha256 "a59eace6f01f84da6b5261d18d4106a0b2c103bacc2f33be9b380d86233ee1ad" => :mojave
   end
+
   # https://github.com/Homebrew/homebrew-core/issues/30726
   # strings libCling.so | grep Xcode:
   #  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
@@ -28,6 +31,7 @@ class Vp1lightRoot < Formula
    # end
   #end
 
+  # DEPENDENCIES
   depends_on "cmake" => :build
   depends_on "davix"
   depends_on "fftw"
@@ -50,6 +54,7 @@ class Vp1lightRoot < Formula
 
   #needs :cxx14
 
+  # COMPILATION INSTRUCTIONS
   def install
     # Work around "error: no member named 'signbit' in the global namespace"
     ENV.delete("SDKROOT") if DevelopmentTools.clang_build_version >= 900
@@ -90,7 +95,7 @@ class Vp1lightRoot < Formula
       -Dssl=ON
       -Dtmva=ON
       -Dxrootd=ON
-      -Dcxx14=ON
+      -Dcxx17=ON
     ]
 
     mkdir "builddir" do
