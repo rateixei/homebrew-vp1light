@@ -12,7 +12,8 @@ class Vp1lightMac < Formula
   depends_on "boost" # tested OK with boost v. 1.70
   depends_on "clhep"
   depends_on "eigen"
-
+  
+  #depends_on "https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel/raw/master/geomodelcore.rb"
   depends_on "atlas/geomodel/geomodelcore"
 
   depends_on "ric-bianchi/coin3d/coin"
