@@ -26,9 +26,8 @@ Now, you can launch VP1Light:
 vp1light
 ```
 
-Click on `Geomoetry studies`: when prompted, you can choose the geometry file downloaded above. The sample file contains the whole ATLAS geometry so the loading of all objects will take some about 30 seconds. In the end, you will see a black screen with a 3D floor in it. Click on the `Geo` tab and try to switch different parts of the ATLAS detector ON and OFF.
 
-
+----
 
 ### Detailed Instructions
 
@@ -65,3 +64,22 @@ brew install vp1light-mac
 ```
 
 This will install VP1Light and all its dependencies (taken from formulas contained in the other Taps).
+
+#### 3. Download a Sample Geometry Datafile
+
+Now, download a sample geometry datafile:
+
+```
+wget https://atlas-vp1.web.cern.ch/atlas-vp1/doc_new/sample_datafiles/geometry/geometry-ATLAS-R2-2015-03-01-00.db
+```
+
+#### 4. Run VP1Light
+
+Now, you can launch VP1Light:
+
+```
+vp1light
+```
+
+Click on `Geomoetry studies`: when prompted, you can choose the geometry file downloaded above. The sample file contains the whole ATLAS geometry so the loading of all objects will take some about 30 seconds. In the end, you will see a black screen with a 3D floor in it. Click on the `Geo` tab and try to switch different parts of the ATLAS detector ON and OFF.
+
