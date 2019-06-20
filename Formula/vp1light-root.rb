@@ -1,4 +1,5 @@
 class Vp1lightRoot < Formula
+
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
 

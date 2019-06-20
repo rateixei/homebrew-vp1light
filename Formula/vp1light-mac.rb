@@ -1,7 +1,6 @@
 class Vp1lightMac < Formula
 
   desc "The VP1light HEP event and geometry display"
-
   homepage "http://atlas-vp1.web.cern.ch/atlas-vp1/home/"
 
   # SOURCES
