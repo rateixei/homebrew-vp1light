@@ -11,8 +11,10 @@ _Note:_ If you do not have `brew` installed on your machine, you can find docume
 
 ```
 brew tap atlas/geomodel https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel.git
-brew tap ric-bianchi/vp1light # this will also install the Tap 'ric-bianchi/coin3d'
+brew tap ric-bianchi/vp1light 
 ```
+
+The commands above download all the recipes needed to install VP1Light and all its dependencies. The Tap `ric-bianchi/coin3d` will be automatically installed too, from which the 3D graphics libraries will be downloaded.
 
 ### 2. Install VP1Light
 
