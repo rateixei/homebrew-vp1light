@@ -4,17 +4,18 @@ class Vp1lightMac < Formula
   homepage "http://atlas-vp1.web.cern.ch/atlas-vp1/home/"
 
   # SOURCES
-  url "https://atlas-vp1.web.cern.ch/atlas-vp1/sources/vp1light-2.1-N.zip"
-  sha256 "4d48027bcaad0e8c760304d15125ee954c9138a92d24dbdc5f7b0be6f741be49"
+  url "https://gitlab.cern.ch/rbianchi/athena/-/archive/1.0/athena-1.0.zip"
+  sha256 "f9011ede226651efbb8ab5f3e347853fc671d9dbda4f5499aa5d592b9d522ec5"
 
   # DEPENDENCIES
   depends_on "cmake" => :build
   depends_on "boost" # tested OK with boost v. 1.70
   depends_on "clhep"
   depends_on "eigen"
-  
+
   #depends_on "https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel/raw/master/geomodelcore.rb"
   depends_on "atlas/geomodel/geomodelcore"
+  depends_on "atlas/geomodel/geomodelio"
 
   depends_on "ric-bianchi/coin3d/coin"
   depends_on "ric-bianchi/coin3d/simage"
@@ -34,7 +35,7 @@ class Vp1lightMac < Formula
        ENV["SHLIB_PATH"] = "/usr/local/lib/root"
        mkdir "builddir" do
        system "echo $PATH "
-       system "cmake", "../Projects/NewVP1Light", "-DCMAKE_CXX_COMPILER=/usr/bin/clang++", *std_cmake_args
+       system "cmake", "../Projects/VP1LightPackaging", "-DCMAKE_CXX_COMPILER=/usr/bin/clang++", *std_cmake_args
        system "make", "install"
     end
   end
@@ -43,7 +44,7 @@ class Vp1lightMac < Formula
   bottle do
     root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
     cellar :any
-    sha256 "5072ef105f9f3b9ba0aa31b10d31605487f78eb122a93a4ecd0f14172f006b50" => :mojave
+    sha256 "6c44c588189e1105528fad7ac73fd873033faf5a311a212f1205c2faf9f9aa7d" => :mojave
   end
 
 end
