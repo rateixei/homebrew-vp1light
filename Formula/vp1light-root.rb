@@ -14,6 +14,7 @@ class Vp1lightRoot < Formula
   # PRE-COMPILED PACKAGES ("Bottles")
   bottle do
       # root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
+      # TODO: move this to vp1 web area, with the other bottles
       root_url "https://atlas-vp1-for-outreach.web.cern.ch/atlas-vp1-for-outreach/sources/bottles"
       sha256 "a59eace6f01f84da6b5261d18d4106a0b2c103bacc2f33be9b380d86233ee1ad" => :mojave
   end
