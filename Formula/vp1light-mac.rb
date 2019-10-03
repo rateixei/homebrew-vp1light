@@ -4,23 +4,26 @@ class Vp1lightMac < Formula
   homepage "http://atlas-vp1.web.cern.ch/atlas-vp1/home/"
 
   # SOURCES
-  url "https://gitlab.cern.ch/rbianchi/athena/-/archive/1.0/athena-1.0.zip"
-  sha256 "f9011ede226651efbb8ab5f3e347853fc671d9dbda4f5499aa5d592b9d522ec5"
+  #url "https://gitlab.cern.ch/rbianchi/athena/-/archive/1.0/athena-1.0.zip"
+  #sha256 "f9011ede226651efbb8ab5f3e347853fc671d9dbda4f5499aa5d592b9d522ec5"
+  url "https://gitlab.cern.ch/rbianchi/athena/-/archive/1.1/athena-1.1.zip"
+  #sha256 ""
 
   # DEPENDENCIES
   depends_on "cmake" => :build
   depends_on "boost" # tested OK with boost v. 1.70
-  depends_on "clhep"
+  depends_on "clhep" # tested OK with 2.4.1.2
   depends_on "eigen"
 
   #depends_on "https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel/raw/master/geomodelcore.rb"
-  depends_on "atlas/geomodel/geomodelcore"
-  depends_on "atlas/geomodel/geomodelio"
+  depends_on "atlas/geomodel/geomodelcore" => :recommended
+  depends_on "atlas/geomodel/geomodelio" => :recommended
 
-  depends_on "ric-bianchi/coin3d/coin"
   depends_on "ric-bianchi/coin3d/simage"
-  depends_on "ric-bianchi/coin3d/soqt5"
+  depends_on "ric-bianchi/coin3d/coin-bb"
+  depends_on "ric-bianchi/coin3d/soqt-bb"
 
+  #depends_on "ric-bianchi/vp1light/clhep@2.4.1.0" # the bottle below has been built with this version, it complains with newest
   depends_on "ric-bianchi/vp1light/vp1light-root"
   depends_on "ric-bianchi/vp1light/vp1light-googletest"
   depends_on "ric-bianchi/vp1light/heputils"
@@ -44,7 +47,7 @@ class Vp1lightMac < Formula
   bottle do
     root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
     cellar :any
-    sha256 "6c44c588189e1105528fad7ac73fd873033faf5a311a212f1205c2faf9f9aa7d" => :mojave
+    sha256 "a69993442aa3e19e2c6df9126dcaec8622a6354df76531a6777b9609a6338b86" => :mojave
   end
 
 end
