@@ -20,7 +20,7 @@ class Vp1lightMac < Formula
   depends_on "eigen"
 
   # depends_on "https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel/raw/master/geomodelcore.rb"
-  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-coin3d/master/Formula/coin-bb.rb"
+  depends_on "https://github.com/rateixei/homebrew-coin3d/blob/master/Formula/coin-bb.rb"
   depends_on "https://raw.githubusercontent.com/rateixei/homebrew-coin3d/master/Formula/simage-bb.rb"
   depends_on "https://raw.githubusercontent.com/rateixei/homebrew-coin3d/master/Formula/soqt-bb.rb"
   depends_on "https://raw.githubusercontent.com/rateixei/homebrew-vp1light/master/Formula/heppdt.rb"
