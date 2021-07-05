@@ -1,5 +1,4 @@
 class Vp1lightRoot < Formula
-
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
 
@@ -10,13 +9,12 @@ class Vp1lightRoot < Formula
 
   head "https://github.com/root-project/root.git"
 
-
   # PRE-COMPILED PACKAGES ("Bottles")
   bottle do
-      # root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
-      # TODO: move this to vp1 web area, with the other bottles
-      root_url "https://atlas-vp1-for-outreach.web.cern.ch/atlas-vp1-for-outreach/sources/bottles"
-      sha256 "a59eace6f01f84da6b5261d18d4106a0b2c103bacc2f33be9b380d86233ee1ad" => :mojave
+    # root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
+    # TODO: move this to vp1 web area, with the other bottles
+    root_url "https://atlas-vp1-for-outreach.web.cern.ch/atlas-vp1-for-outreach/sources/bottles"
+    sha256 mojave: "a59eace6f01f84da6b5261d18d4106a0b2c103bacc2f33be9b380d86233ee1ad"
   end
 
   # https://github.com/Homebrew/homebrew-core/issues/30726
@@ -24,17 +22,18 @@ class Vp1lightRoot < Formula
   #  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
   #  /Applications/Xcode.app/Contents/Developer
 
-  #pour_bottle? do
-   # reason "The bottle hardcodes locations inside Xcode.app"
-   # satisfy do
-   #   MacOS::Xcode.installed? &&
-   #     MacOS::Xcode.prefix.to_s.include?("/Applications/Xcode.app/")
-   # end
-  #end
+  # pour_bottle? do
+  # reason "The bottle hardcodes locations inside Xcode.app"
+  # satisfy do
+  #   MacOS::Xcode.installed? &&
+  #     MacOS::Xcode.prefix.to_s.include?("/Applications/Xcode.app/")
+  # end
+  # end
 
   # DEPENDENCIES
   depends_on "cmake" => :build
   depends_on "davix"
+  depends_on "eigen"
   depends_on "fftw"
   depends_on "gcc" # for gfortran
   depends_on "graphviz"
@@ -49,11 +48,10 @@ class Vp1lightRoot < Formula
   depends_on "tbb"
   depends_on "xrootd"
   depends_on "xz" # for LZMA
-  depends_on "eigen"
 
   skip_clean "bin"
 
-  #needs :cxx14
+  # needs :cxx14
 
   # COMPILATION INSTRUCTIONS
   def install
@@ -68,9 +66,9 @@ class Vp1lightRoot < Formula
               "http://lcgpackages",
               "https://lcgpackages"
 
-    py_exe = Utils.popen_read("which python3").strip
-    py_prefix = Utils.popen_read("python3 -c 'import sys;print(sys.prefix)'").chomp
-    py_inc = Utils.popen_read("python3 -c 'from distutils import sysconfig;print(sysconfig.get_python_inc(True))'").chomp
+    py_exe = Utils.safe_popen_read("which", "python3").strip
+    py_prefix = Utils.safe_popen_read("python3 -c 'import sys;print(sys.prefix)'").chomp
+    py_inc = Utils.safe_popen_read("python3 -c 'from distutils import sysconfig;print(sysconfig.get_python_inc(True))'").chomp
 
     args = std_cmake_args + %W[
       -DCLING_CXX_PATH=clang++
@@ -115,20 +113,21 @@ class Vp1lightRoot < Formula
     end
   end
 
-  def caveats; <<~EOS
-    Because ROOT depends on several installation-dependent
-    environment variables to function properly, you should
-    add the following commands to your shell initialization
-    script (.bashrc/.profile/etc.), or call them directly
-    before using ROOT.
+  def caveats
+    <<~EOS
+      Because ROOT depends on several installation-dependent
+      environment variables to function properly, you should
+      add the following commands to your shell initialization
+      script (.bashrc/.profile/etc.), or call them directly
+      before using ROOT.
 
-    For bash users:
-      . #{HOMEBREW_PREFIX}/bin/thisroot.sh
-    For zsh users:
-      pushd #{HOMEBREW_PREFIX} >/dev/null; . bin/thisroot.sh; popd >/dev/null
-    For csh/tcsh users:
-      source #{HOMEBREW_PREFIX}/bin/thisroot.csh
-  EOS
+      For bash users:
+        . #{HOMEBREW_PREFIX}/bin/thisroot.sh
+      For zsh users:
+        pushd #{HOMEBREW_PREFIX} >/dev/null; . bin/thisroot.sh; popd >/dev/null
+      For csh/tcsh users:
+        source #{HOMEBREW_PREFIX}/bin/thisroot.csh
+    EOS
   end
 
   test do
