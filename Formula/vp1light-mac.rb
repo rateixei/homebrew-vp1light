@@ -20,14 +20,14 @@ class Vp1lightMac < Formula
   depends_on "eigen"
 
   # depends_on "https://gitlab.cern.ch/GeoModelDev/packaging/homebrew-geomodel/raw/master/geomodelcore.rb"
-  depends_on "ric-bianchi/coin3d/coin-bb"
-  depends_on "ric-bianchi/coin3d/simage"
-  depends_on "ric-bianchi/coin3d/soqt-bb"
-  depends_on "ric-bianchi/vp1light/heppdt"
-  depends_on "ric-bianchi/vp1light/heputils"
-  depends_on "ric-bianchi/vp1light/mcutils"
-  depends_on "ric-bianchi/vp1light/vp1light-googletest"
-  depends_on "ric-bianchi/vp1light/vp1light-root"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-coin3d/master/Formula/coin-bb.rb"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-coin3d/master/Formula/simage-bb.rb"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-coin3d/master/Formula/soqt-bb.rb"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-vp1light/master/Formula/heppdt.rb"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-vp1light/master/Formula/heputils.rb"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-vp1light/master/Formula/mcutils.rb"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-vp1light/master/Formula/vp1light-googletest.rb"
+  depends_on "https://raw.githubusercontent.com/rateixei/homebrew-vp1light/master/Formula/vp1light-root.rb"
   depends_on "atlas/geomodel/geomodelcore" => :recommended
   depends_on "atlas/geomodel/geomodelio" => :recommended
 
